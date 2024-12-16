@@ -390,7 +390,8 @@ body{
     <div class="overlay-gradient"></div>
     <div class="container text-center hero-text-container">
         <div class="hero-content position-relative">
-            <h1 class="display-3 fw-bold hero-title" data-aos="fade-down">Profesjonalne Usługi Tokarsko-Ślusarskie</h1>
+            <h1 class="display-3 fw-bold hero-title" data-aos="fade-down">Profesjonalne usługi</h1>
+            <h1 class="display-3 fw-bold hero-title" data-aos="fade-down">Spawalniczo-ślusarskie</h1>
             <p class="lead mt-3" data-aos="fade-up" data-aos-delay="200">Precyzja, Doświadczenie, Jakość. Tworzymy metalowe elementy z pasją i zaangażowaniem.</p>
             <a href="#" class="btn mt-4 btn-dark hero-cta" data-aos="zoom-in" data-aos-delay="400">Dowiedz się więcej</a>
         </div>
