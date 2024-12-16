@@ -363,9 +363,6 @@ body{
         <li class="nav-item">
           <a class="nav-link" href="contact.php">Kontakt</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link btn btn-primary ms-2" href="login.php">Zaloguj / Zarejestruj</a>
-        </li>
       </ul>
       
       <!--theme switch-->

@@ -374,9 +374,6 @@ body{
         <li class="nav-item">
           <a class="nav-link" href="contact.php">Kontakt</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link btn btn-primary ms-2" href="login.php">Zaloguj / Zarejestruj</a>
-        </li>
       </ul>
       
       <!--theme switch-->
@@ -413,7 +410,7 @@ body{
             <div class="col-md-6 mt-4 mt-md-0" data-aos="fade-left" data-aos-duration="1000">
                 <h2 class="mb-3">O Naszym Zakładzie</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                <a href="#" class="btn btn-outline-dark mt-3 about-btn">Poznaj nas bliżej</a>
+                <a href="about.php" class="btn btn-outline-dark mt-3 about-btn">Poznaj nas bliżej</a>
             </div>
         </div>
     </div>
@@ -453,7 +450,7 @@ body{
             </div>
         </div>
         <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
-            <a href="#" class="btn btn-primary btn-lg services-btn">Zobacz pełną ofertę</a>
+            <a href="offer.php" class="btn btn-primary btn-lg services-btn">Zobacz pełną ofertę</a>
         </div>
     </div>
 </section>
@@ -463,7 +460,7 @@ body{
     <div class="container">
         <h2 class="mb-3">Masz pytania? Chcesz wycenę?</h2>
         <p class="mb-4">Skontaktuj się z nami, a nasi specjaliści pomogą Ci w realizacji Twojego projektu.</p>
-        <a href="#" class="btn btn-dark btn-lg cta-btn">Skontaktuj się</a>
+        <a href="contact.php" class="btn btn-dark btn-lg cta-btn">Skontaktuj się</a>
     </div>
 </section>
 
