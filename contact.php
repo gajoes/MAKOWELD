@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAKO-WELD - Kontakt</title>
+    <title data-pl="MAKO-WELD - Kontakt" data-en="MAKO-WELD - Contact">MAKO-WELD - Kontakt</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body > main {
+            flex: 1;
+        }
+
         body.light-mode{
             background-color: #ffffff;
             color: #000000;
@@ -167,68 +179,78 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav me-3">
             <li class="nav-item">
-              <a class="nav-link" href="index.php">Strona Główna</a>
+              <a class="nav-link" href="index.php" data-pl="Strona Główna" data-en="Main Page">Strona Główna</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.php">O Nas</a>
+              <a class="nav-link" href="about.php" data-pl="O Nas" data-en="About Us">O Nas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="offer.php">Oferta</a>
+              <a class="nav-link" href="offer.php" data-pl="Oferta" data-en="Offer">Oferta</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="contact.php">Kontakt</a>
+              <a class="nav-link active" href="contact.php" data-pl="Kontakt" data-en="Contact">Kontakt</a>
             </li>
           </ul>
           
           <!--theme switch-->
           <div class="form-check form-switch ms-3">
             <input class="form-check-input" type="checkbox" id="themeToggle" />
-            <label class="form-check-label" for="themeToggle">Tryb ciemny</label>
+            <label class="form-check-label" for="themeToggle" data-pl="Tryb ciemny" data-en="Dark mode">Tryb ciemny</label>
           </div>
+          <div class="ms-3">
+        <select id="langToggle" class="form-select form-select-sm">
+          <option value="pl">PL</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
         </div>
       </div>
     </nav>
-    
-    <section class="contact-section py-5">
-        <div class="container" data-aos="fade-up" data-aos-offset="150">
-            <div class="row">
-                <div class="col-md-6 mb-4" data-aos="fade-right" data-aos-duration="1000">
-                    <h2 class="mb-4">Skontaktuj się z nami</h2>
-                    <p><i class="fas fa-map-marker-alt me-2"></i> ul. Gajowa 16, 08-110 Siedlce</p>
-                    <p><i class="fas fa-phone me-2"></i> +48 728 343 103</p>
-                    <p><i class="fas fa-envelope me-2"></i> 
-                        <a href="mailto:m.gajowniczek@makoweld.com">m.gajowniczek@makoweld.com</a>
-                    </p>
-                    <p><i class="fas fa-clock me-2"></i> Pon - Pt: 08:00 - 16:00</p>
-                </div>
-                <div class="col-md-6 mb-4" data-aos="fade-left" data-aos-duration="1000">
-                    <h2 class="mb-4">Śledź nas w mediach społecznościowych</h2>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/profile.php?id=61562463804658" target="_blank" class="facebook" data-aos="fade-in"><i class="fab fa-facebook-square"></i></a>
-                        <a href="https://www.instagram.com/yourprofile" target="_blank" class="instagram" data-aos="fade-in" data-aos-delay="200"><i class="fab fa-instagram-square"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!--map-->
-            <div class="row">
-                <div class="col-12" data-aos="zoom-in" data-aos-duration="1000">
-                    <h2 class="text-center mb-4">Znajdź nas</h2>
-                    <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2449.9798191082364!2d22.20955807650852!3d52.116495971958145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTLCsDA2JzU5LjQiTiAyMsKwMTInNDMuNyJF!5e0!3m2!1spl!2spl!4v1734359786465!5m2!1spl!2spl" 
-                        allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+
+    <main>
+      <section class="contact-section py-5">
+          <div class="container" data-aos="fade-up" data-aos-offset="150">
+              <div class="row">
+                  <div class="col-md-6 mb-4" data-aos="fade-right" data-aos-duration="1000">
+                      <h2 class="mb-4" data-pl="Skontaktuj się z nami" data-en="Get in touch with us">Skontaktuj się z nami</h2>
+                      <p data-pl="ul. Gajowa 16, 08-110 Siedlce" data-en="Gajowa 16 St. 08-110 Siedlce"><i class="fas fa-map-marker-alt me-2"></i> ul. Gajowa 16, 08-110 Siedlce</p>
+                      <p><i class="fas fa-phone me-2"></i> +48 728 343 103</p>
+                      <p><i class="fas fa-envelope me-2"></i> 
+                          <a href="mailto:m.gajowniczek@makoweld.com">m.gajowniczek@makoweld.com</a>
+                      </p>
+                      <p><i class="fas fa-clock me-2"></i> Pon - Pt: 08:00 - 16:00</p>
+                  </div>
+                  <div class="col-md-6 mb-4" data-aos="fade-left" data-aos-duration="1000">
+                      <h2 class="mb-4" data-pl="Śledź nas w mediach społecznościowych" data-en="Follow us on social media">Śledź nas w mediach społecznościowych</h2>
+                      <div class="social-icons">
+                          <a href="https://www.facebook.com/profile.php?id=61562463804658" target="_blank" class="facebook" data-aos="fade-in"><i class="fab fa-facebook-square"></i></a>
+                          <a href="https://www.instagram.com/yourprofile" target="_blank" class="instagram" data-aos="fade-in" data-aos-delay="200"><i class="fab fa-instagram-square"></i></a>
+                      </div>
+                  </div>
+              </div>
+              <!--map-->
+              <div class="row">
+                  <div class="col-12" data-aos="zoom-in" data-aos-duration="1000">
+                      <h2 class="text-center mb-4" data-pl="Znajdź nas" data-en="Find us">Znajdź nas</h2>
+                      <div class="map-container">
+                          <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2449.9798191082364!2d22.20955807650852!3d52.116495971958145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTLCsDA2JzU5LjQiTiAyMsKwMTInNDMuNyJF!5e0!3m2!1spl!2spl!4v1734359786465!5m2!1spl!2spl" 
+                          allowfullscreen="" loading="lazy"></iframe>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+    </main>
+
     <!--footer-->
     <footer class="footer-section py-4">
         <div class="container text-center">
-            <p class="mb-0">©<?php echo date("Y"); ?> MAKO-WELD. Wszelkie prawa zastrzeżone.</p>
+            <p class="mb-0">
+                &copy;<?php echo date("Y"); ?> <span data-pl="MAKO-WELD. Wszelkie prawa zastrzeżone." data-en="MAKO-WELD. All rights reserved."></span>
+            </p>
         </div>
     </footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -241,22 +263,41 @@
         const toggle=document.getElementById('themeToggle');
         const body=document.body;
 
-        if(localStorage.getItem('theme')==='dark'){
+        if (localStorage.getItem('theme')==='dark') {
             body.classList.remove('light-mode');
             body.classList.add('dark-mode');
             toggle.checked=true;
         }
 
-        toggle.addEventListener('change',()=>{
-            if(toggle.checked){
+        toggle.addEventListener('change',() =>{
+            if (toggle.checked){
                 body.classList.remove('light-mode');
                 body.classList.add('dark-mode');
-                localStorage.setItem('theme','dark');
-            }else{
+                localStorage.setItem('theme', 'dark');
+            } else{
                 body.classList.remove('dark-mode');
                 body.classList.add('light-mode');
                 localStorage.setItem('theme', 'light');
             }
+        });
+    </script>
+    <script>
+        const switchLang=lang =>{
+            document.querySelectorAll('[data-pl]').forEach(el =>{
+                el.textContent=el.getAttribute('data-'+lang);
+            });
+        };
+
+        document.getElementById('langToggle').addEventListener('change',e =>{
+            const lang=e.target.value;
+            localStorage.setItem('lang',lang);
+            switchLang(lang);
+        });
+
+        window.addEventListener('DOMContentLoaded',()=> {
+            const lang=localStorage.getItem('lang') || 'pl';
+            document.getElementById('langToggle').value=lang;
+            switchLang(lang);
         });
     </script>
 </body>

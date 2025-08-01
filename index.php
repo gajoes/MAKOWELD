@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Zakład Tokarsko-Ślusarski - Strona Główna</title>
+    <title data-pl="MAKOWELD - Strona Główna" data-en="MAKOWELD - Main Page">MAKOWELD - Strona Główna</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-XRBY41W6e6W4fWSo3eIQ1+r6KoiB84IzjReFdRJ4/nyZ8lHKEfEvOg1R9scCTg/C6DDLu5fcd1b2QAHN9h0Sjw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
@@ -148,23 +148,19 @@ a:hover{
     transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 .dark-mode .about-btn{
-    border-color: #ffffff;
     color: #ffffff;
 }
 .dark-mode .about-btn:hover{
     background-color: #555555;
-    border-color: #555555;
     color: #ffffff;
 }
 
 .light-mode .about-btn{
-    border-color: #000000;
-    color: #000000;
+    color: #ffffff;
 }
 .light-mode .about-btn:hover{
     background-color: #ddd;
-    border-color: #ddd;
-    color: #000000;
+    color: #ffffff;
 }
 
 .services-section{
@@ -363,23 +359,29 @@ body{
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav me-3">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Strona Główna</a>
+          <a class="nav-link active" href="#" data-pl="Strona Główna" data-en="Main Page">Strona Główna</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.php">O Nas</a>
+          <a class="nav-link" href="about.php" data-pl="O Nas" data-en="About Us">O Nas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="offer.php">Oferta</a>
+          <a class="nav-link" href="offer.php" data-pl="Oferta" data-en="Offer">Oferta</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.php">Kontakt</a>
+          <a class="nav-link" href="contact.php" data-pl="Kontakt" data-en="Contact">Kontakt</a>
         </li>
       </ul>
       
       <!--theme switch-->
       <div class="form-check form-switch ms-3">
         <input class="form-check-input" type="checkbox" id="themeToggle" />
-        <label class="form-check-label" for="themeToggle">Tryb ciemny</label>
+        <label class="form-check-label" for="themeToggle" data-pl="Tryb ciemny" data-en="Dark mode">Tryb ciemny</label>
+      </div>
+      <div class="ms-3">
+        <select id="langToggle" class="form-select form-select-sm">
+          <option value="pl">PL</option>
+          <option value="en">EN</option>
+        </select>
       </div>
     </div>
   </div>
@@ -390,14 +392,14 @@ body{
     <div class="overlay-gradient"></div>
     <div class="container text-center hero-text-container">
         <div class="hero-content position-relative">
-            <h1 class="display-3 fw-bold hero-title" data-aos="fade-down">Profesjonalne usługi</h1>
-            <h1 class="display-3 fw-bold hero-title" data-aos="fade-down">Spawalniczo-ślusarskie</h1>
-            <p class="lead mt-3" data-aos="fade-up" data-aos-delay="200">Precyzja, Doświadczenie, Jakość. Tworzymy metalowe elementy z pasją i zaangażowaniem.</p>
-            <a href="#" class="btn mt-4 btn-dark hero-cta" data-aos="zoom-in" data-aos-delay="400">Dowiedz się więcej</a>
+            <h1 class="display-3 fw-bold hero-title" data-aos="fade-down" data-pl="Profesjonalne usługi" data-en="Professional Services">Profesjonalne usługi</h1>
+            <h1 class="display-3 fw-bold hero-title" data-aos="fade-down" data-pl="Spawalniczo-Ślusarskie" data-en="Welding & Locksmithing">Spawalniczo-ślusarskie</h1>
+            <p class="lead mt-3" data-aos="fade-up" data-aos-delay="200" data-pl="Precyzja, Doświadczenie, Jakość. Tworzymy metalowe elementy z pasją i zaangażowaniem." data-en="Precision, Work experience, High Quality. We work with passion and engagement.">Precyzja, Doświadczenie, Jakość. Tworzymy metalowe elementy z pasją i zaangażowaniem.</p>
+            <a href="about.php" class="btn mt-4 btn-primary hero-cta" data-aos="zoom-in" data-aos-delay="400" data-pl="Dowiedz się więcej" data-en="Find out more">Dowiedz się więcej</a>
         </div>
     </div>
     <video autoplay muted loop playsinline class="hero-bg-video">
-       <source src="video/industrial_bg.mp4" type="video/mp4">
+       <source src="./img/weld.mp4" type="video/mp4">
     </video>
 </header>
 
@@ -406,12 +408,12 @@ body{
     <div class="container" data-aos="fade-up" data-aos-offset="150">
         <div class="row align-items-center">
             <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
-                <img src="images/o_nas.jpg" alt="O nas" class="img-fluid rounded shadow about-img">
+                <img src="img/spawacz.png" alt="O nas" class="img-fluid rounded shadow about-img">
             </div>
             <div class="col-md-6 mt-4 mt-md-0" data-aos="fade-left" data-aos-duration="1000">
-                <h2 class="mb-3">O Naszym Zakładzie</h2>
+                <h2 class="mb-3" data-pl="O naszym zakładzie" data-en="About our company">O Naszym Zakładzie</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                <a href="about.php" class="btn btn-outline-dark mt-3 about-btn">Poznaj nas bliżej</a>
+                <a href="about.php" class="btn btn-primary mt-3 about-btn" data-pl="Poznaj nas bliżej" data-en="Get to know us better">Poznaj nas bliżej</a>
             </div>
         </div>
     </div>
@@ -421,37 +423,37 @@ body{
 <section class="services-section py-5" data-aos="fade-in" data-aos-offset="150">
     <div class="container">
         <div class="text-center mb-5" data-aos="fade-up">
-            <h2>Nasza Oferta</h2>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            <h2 data-pl="Nasza oferta" data-en="Our offer">Nasza Oferta</h2>
+            <p class="text-muted"data-pl="Skrótowy opis usług które opisujemy." data-en="Shortened description of the services that we provide.">Skrótowy opis usług które opisujemy.</p>
         </div>
-        <div class="row g-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="col-md-4">
-                <div class="service-card p-4 text-center shadow position-relative">
+        <div class="row g-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-md-4 d-flex">
+                <div class="service-card p-4 text-center shadow position-relative w-100">
                     <i class="fas fa-cog fa-3x mb-3 service-icon"></i>
-                    <h5>Obróbka Tokarska</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <h5 data-pl="Spawanie aluminium" data-en="Aluminium welding">Spawanie aluminium</h5>
+                    <p data-pl="Spawanie aluminium to specjalistyczny proces łączenia lekkiego, wytrzymałego i odpornego na korozję metalu, wymagający precyzji, doświadczenia i odpowiedniej technologii." data-en="Aluminum welding is a process of joining lightweight, durable metal, requiring precision, experience, and proper technology.">Spawanie aluminium to specjalistyczny proces łączenia lekkiego, wytrzymałego i odpornego na korozję metalu, wymagający precyzji, doświadczenia i odpowiedniej technologii.</p>
                     <a href="#" class="stretched-link"></a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="service-card p-4 text-center shadow position-relative">
+            <div class="col-md-4 d-flex">
+                <div class="service-card p-4 text-center shadow position-relative w-100">
                     <i class="fas fa-wrench fa-3x mb-3 service-icon"></i>
-                    <h5>Ślusarstwo</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <h5 data-pl="Spawanie stali nierdzewnej (stopy niklu)" data-en="Stainless steel welding (nickel alloys)">Spawanie stali nierdzewnej (stopy niklu)</h5>
+                    <p data-pl="Spawanie stali nierdzewnej (w tym stopów niklu) to precyzyjny proces łączenia metali odpornych na korozję, wysokie temperatury i działanie chemikaliów." data-en="Welding stainless steel (including nickel alloys) is a precise process of joining metals resistant to corrosion, high temperatures, and chemicals.">Spawanie stali nierdzewnej (w tym stopów niklu) to precyzyjny proces łączenia metali odpornych na korozję, wysokie temperatury i działanie chemikaliów.</p>
                     <a href="#" class="stretched-link"></a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="service-card p-4 text-center shadow position-relative">
+            <div class="col-md-4 d-flex">
+                <div class="service-card p-4 text-center shadow position-relative w-100">
                     <i class="fas fa-industry fa-3x mb-3 service-icon"></i>
-                    <h5>Prototypowanie</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <h5 data-pl="Spawanie stali SG2,SG3" data-en="SG2,SG3 steel welding">Spawanie stali SG2, SG3</h5>
+                    <p data-pl="Spawanie stali SG2 i SG3 to popularna metoda łączenia niskowęglowych stali konstrukcyjnych, zapewniająca dobre własności mechaniczne i wysoką jakość spoin." data-en="Welding SG2 and SG3 steel is a common method for joining low-carbon structural steels, offering good mechanical properties and high-quality welds.">Spawanie stali SG2 i SG3 to popularna metoda łączenia niskowęglowych stali konstrukcyjnych, zapewniająca dobre własności mechaniczne i wysoką jakość spoin.</p>
                     <a href="#" class="stretched-link"></a>
                 </div>
             </div>
         </div>
         <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
-            <a href="offer.php" class="btn btn-primary btn-lg services-btn">Zobacz pełną ofertę</a>
+            <a href="offer.php" class="btn btn-primary btn-lg services-btn" data-pl="Zobacz pełną ofertę" data-en="Show the full offer">Zobacz pełną ofertę</a>
         </div>
     </div>
 </section>
@@ -459,16 +461,18 @@ body{
 <!--contact section-->
 <section class="cta-section py-5 text-center" data-aos="fade-in" data-aos-offset="150">
     <div class="container">
-        <h2 class="mb-3">Masz pytania? Chcesz wycenę?</h2>
-        <p class="mb-4">Skontaktuj się z nami, a nasi specjaliści pomogą Ci w realizacji Twojego projektu.</p>
-        <a href="contact.php" class="btn btn-dark btn-lg cta-btn">Skontaktuj się</a>
+        <h2 class="mb-3" data-pl="Masz pytania? Chcesz wycenę?" data-en="More questions? Cost estimation?">Masz pytania? Chcesz wycenę?</h2>
+        <p class="mb-4" data-pl="Skontaktuj się z nami, a nasi specjaliści pomogą Ci w realizacji Twojego projektu." data-en="Get in touch with us and our specialists will help You with the realization of Your project.">Skontaktuj się z nami, a nasi specjaliści pomogą Ci w realizacji Twojego projektu.</p>
+        <a href="contact.php" class="btn btn-primary btn-lg cta-btn" data-pl="Skontaktuj się" data-en="Contact us">Skontaktuj się</a>
     </div>
 </section>
 
 <!--footer-->
 <footer class="footer-section py-4">
     <div class="container text-center">
-        <p class="mb-0">©<?php echo date("Y"); ?> MAKO-WELD. Wszelkie prawa zastrzeżone.</p>
+        <p class="mb-0">
+            &copy;<?php echo date("Y"); ?> <span data-pl="MAKO-WELD. Wszelkie prawa zastrzeżone." data-en="MAKO-WELD. All rights reserved."></span>
+        </p>
         <div class="mt-2">
             <a href="#" class="me-3"><i class="fab fa-facebook fa-lg"></i></a>
             <a href="#" class="me-3"><i class="fab fa-linkedin fa-lg"></i></a>
@@ -500,7 +504,7 @@ body{
   }
 
   toggle.addEventListener('change',()=>{
-    if(toggle.checked) {
+    if(toggle.checked){
       body.classList.remove('light-mode');
       body.classList.add('dark-mode');
       localStorage.setItem('theme','dark');
@@ -515,15 +519,34 @@ body{
 <script>
   document.addEventListener('DOMContentLoaded',function(){
     const serviceIcons=document.querySelectorAll('.service-icon');
-    serviceIcons.forEach(icon => {
+    serviceIcons.forEach(icon =>{
       icon.addEventListener('mouseenter',()=>{
-        gsap.to(icon, { y: -10, scale: 1.1, duration: 0.3 });
+        gsap.to(icon, { y: -10,scale: 1.1,duration: 0.3 });
       });
       icon.addEventListener('mouseleave',()=>{
-        gsap.to(icon, { y: 0, scale: 1, duration: 0.3 });
+        gsap.to(icon,{ y: 0,scale: 1,duration: 0.3 });
       });
     });
   });
+</script>
+<script>
+const switchLang=lang =>{
+  document.querySelectorAll('[data-pl]').forEach(el =>{
+    el.textContent=el.getAttribute('data-'+lang);
+  });
+};
+
+document.getElementById('langToggle').addEventListener('change',e =>{
+  const lang=e.target.value;
+  localStorage.setItem('lang',lang);
+  switchLang(lang);
+});
+
+window.addEventListener('DOMContentLoaded',()=>{
+  const lang=localStorage.getItem('lang') || 'pl';
+  document.getElementById('langToggle').value=lang;
+  switchLang(lang);
+});
 </script>
 </body>
 </html>
