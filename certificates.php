@@ -155,7 +155,7 @@
         }
         
         .service-card img{
-            max-height: 150px;
+            max-height: 450px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 1.5rem;
@@ -229,10 +229,24 @@
         z-index: -1;
         opacity: 0.5;
         }
+        .modal-custom{
+        background-color: #ffffff;
+        color: #000000;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dark-mode .modal-custom{
+        background-color: #2c2c2c;
+        color: #ffffff;
+        }
+
+        .dark-mode .modal-header .btn-close{
+        filter: invert(1);
+        }
     </style>
 </head>
 <body class="light-mode">
-<!--navigation bar-->
+<!--navbar-->
 <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">
@@ -265,7 +279,6 @@
         </li>
       </ul>
       
-      <!--theme switch-->
       <div class="form-check form-switch ms-3">
         <input class="form-check-input" type="checkbox" id="themeToggle" />
         <label class="form-check-label" for="themeToggle" data-pl="Tryb ciemny" data-en="Dark mode">Tryb ciemny</label>
@@ -284,9 +297,9 @@
     <div class="overlay-gradient"></div>
     <div class="container text-center hero-text-container">
         <div class="hero-content position-relative" data-aos="fade-in">
-            <h1 class="display-4 fw-bold hero-title" data-pl="Nasza Oferta" data-en="Our offer">Nasza Oferta</h1>
-            <p class="lead mt-3" data-pl="Wysokiej jakości usługi tokarsko-ślusarskie dostosowane do Twoich potrzeb." data-en="High quality turnery-locksmithery services adjusted to Your demand.">Wysokiej jakości usługi tokarsko-ślusarskie dostosowane do Twoich potrzeb.</p>
-            <a href="#services" class="btn btn-primary btn-lg mt-4 cta-btn" data-pl="Zobacz usługi" data-en="View the services">Zobacz Usługi</a>
+            <h1 class="display-4 fw-bold hero-title" data-pl="Nasze certyfikaty" data-en="Our certificates">Nasze certyfikaty</h1>
+            <p class="lead mt-3" data-pl="Potwierdzenie pełnego profesjonalizmu naszej firmy." data-en="Confirmation of our professionalism.">Potwierdzenie pełnego profesjonalizmu naszej firmy.</p>
+            <a href="#services" class="btn btn-primary btn-lg mt-4 cta-btn" data-pl="Zobacz Certyfikaty" data-en="View the Certificates">Zobacz Certyfikaty</a>
         </div>
     </div>
     <video autoplay muted loop playsinline class="hero-bg-video">
@@ -294,71 +307,35 @@
     </video>
 </header>
 
-<!--services-->
 <section class="services-section py-5" id="services" data-aos="fade-up">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 data-pl="Nasze Usługi" data-en="Our services">Nasze Usługi</h2>
-            <p class="text-muted" data-pl="Profesjonalne rozwiązania tokarsko-ślusarskie dla każdego projektu." data-en="Professional turnery-locksmithery solutions adjusted to fit every project.">Profesjonalne rozwiązania tokarsko-ślusarskie dla każdego projektu.</p>
+            <h2 data-pl="Posiadane certyfikaty" data-en="Our certificates">Posiadane certyfikaty</h2>
+            <p class="text-muted" data-pl="Szlifujemy nasze umiejętności, dla Twojej wygody." data-en="We hone our skills, for Your comfort.">Szlifujemy nasze umiejętności, dla Twojej wygody.</p>
         </div>
         <div class="row g-4">
-            <div class="col-md-4">
-                <div class="service-card text-center shadow">
-                    <img src="images/usluga1.jpg" alt="Usługa 1" class="img-fluid mb-3 service-image">
-                    <h4 data-pl="Obróbka Tokarska" data-en="Turning operation">Obróbka Tokarska</h4>
-                    <p data-pl="Obróbka tokarska to precyzyjna metoda kształtowania metalu, idealna do tworzenia elementów o wysokiej jakości i dokładności." data-en="Turnery processing is a precise method of shaping metal, ideal for producing high-quality and accurate components.">Obróbka tokarska to precyzyjna metoda kształtowania metalu, idealna do tworzenia elementów o wysokiej jakości i dokładności.</p>
-                    <a href="#" class="stretched-link"></a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-card text-center shadow">
-                    <img src="images/usluga2.jpg" alt="Usługa 2" class="img-fluid mb-3 service-image">
-                    <h4 data-pl="Ślusarstwo" data-en="Locksmithing">Ślusarstwo</h4>
-                    <p data-pl="Ślusarstwo to fachowa obróbka metali, dzięki której powstają solidne i trwałe konstrukcje oraz elementy mechaniczne." data-en="Locksmithing is an advanced metal processing that results in solid and durable structures and mechanical parts.">Ślusarstwo to fachowa obróbka metali, dzięki której powstają solidne i trwałe konstrukcje oraz elementy mechaniczne.</p>
-                    <a href="#" class="stretched-link"></a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-card text-center shadow">
-                    <img src="images/usluga3.jpg" alt="Usługa 3" class="img-fluid mb-3 service-image">
-                    <h4 data-pl="Prototypowanie" data-en="Prototyping">Prototypowanie</h4>
-                    <p data-pl="Prototypowanie to kluczowy etap tworzenia innowacyjnych produktów, który pozwala szybko przekształcić pomysł w realny model." data-en="Prototyping is a crucial stage in developing innovative products which allows you to quickly turn an idea into a tangible model.">Prototypowanie to kluczowy etap tworzenia innowacyjnych produktów, który pozwala szybko przekształcić pomysł w realny model.</p>
-                    <a href="#" class="stretched-link"></a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-card text-center shadow">
-                    <img src="images/usluga4.jpg" alt="Usługa 4" class="img-fluid mb-3 service-image">
-                    <h4 data-pl="Spawanie aluminium" data-en="Aluminium welding">Spawanie aluminium</h4>
-                    <p data-pl="Spawanie aluminium to specjalistyczny proces łączenia lekkiego, wytrzymałego i odpornego na korozję metalu." data-en="Aluminum welding is a specialized process of joining lightweight, durable, and corrosion-resistant metal.">Spawanie aluminium to specjalistyczny proces łączenia lekkiego, wytrzymałego i odpornego na korozję metalu.</p>
-                    <a href="#" class="stretched-link"></a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-card text-center shadow">
-                    <img src="images/usluga5.jpg" alt="Usługa 5" class="img-fluid mb-3 service-image">
-                    <h4 data-pl="Spawanie stali nierdzewnej (stopy niklu)" data-en="Stainless steel welding (nickel alloys)">Spawanie stali nierdzewnej (stopy niklu)</h4>
-                    <p data-pl="Spawanie stali nierdzewnej (w tym stopów niklu) to precyzyjny proces łączenia metali odpornych na korozję, wysokie temperatury i działanie chemikaliów." data-en="Welding stainless steel (including nickel alloys) is a precise process of joining metals resistant to corrosion, high temperatures, and chemicals.">Spawanie stali nierdzewnej (w tym stopów niklu) to precyzyjny proces łączenia metali odpornych na korozję, wysokie temperatury i działanie chemikaliów.</p>
-                    <a href="#" class="stretched-link"></a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-card text-center shadow">
-                    <img src="images/usluga6.jpg" alt="Usługa 6" class="img-fluid mb-3 service-image">
-                    <h4 data-pl="Spawanie stali SG2,SG3" data-en="SG2,SG3 steel welding">Spawanie stali SG2, SG3</h4>
-                    <p data-pl="Spawanie stali SG2 i SG3 to popularna metoda łączenia niskowęglowych stali konstrukcyjnych, zapewniająca dobre własności mechaniczne i wysoką jakość spoin." data-en="Welding SG2 and SG3 steel is a common method for joining low-carbon structural steels, offering good mechanical properties and high-quality welds.">Spawanie stali SG2 i SG3 to popularna metoda łączenia niskowęglowych stali konstrukcyjnych, zapewniająca dobre własności mechaniczne i wysoką jakość spoin.</p>
-                    <a href="#" class="stretched-link"></a>
-                </div>
-            </div>
+    <div class="col-md-4">
+        <div class="service-card text-center shadow" data-bs-toggle="modal" data-bs-target="#modalCertyfikat1">
+            <img src="img/cer1.png" alt="Certyfikat1" class="img-fluid mb-3 service-image">
+            <h4>EN 15085-2 CL2 w dziedzinie działalności P</h4>
+            <p>Spawanie pojazdów szynowych i części pojazdów.</p>
         </div>
     </div>
-</section>
-
-<section class="cta-section py-5 text-center" data-aos="fade-in">
-    <div class="container">
-        <h2 class="mb-3" data-pl="Chcesz wycenę?" data-en="Looking for cost estimation?">Chcesz wycenę?</h2>
-        <p class="mb-4" data-pl="Skontaktuj się z nami, a my pomożemy Ci w realizacji Twojego projektu." data-en="Get in touch with us and we will help You with the implementation of your project.">Skontaktuj się z nami, a my pomożemy Ci w realizacji Twojego projektu.</p>
-        <a href="contact.php" class="btn btn-primary btn-lg" data-pl="Skontakuj się" data-en="Get in touch with us">Skontaktuj się</a>
+    <div class="col-md-4">
+        <div class="service-card text-center shadow" data-bs-toggle="modal" data-bs-target="#modalCertyfikat2">
+            <img src="img/cer2.png" alt="Certyfikat2" class="img-fluid mb-3 service-image">
+            <h4>EN ISO 9001:2015</h4>
+            <p>Wytwarzanie konstrukcji stalowych i aluminiowych oraz elementów maszyn i urządzeń dla produkcji pojazdów szynowych i przemysłu spożywczego. Obróbka mechaniczna, plastyczna, spawanie i lutowanie.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="service-card text-center shadow" data-bs-toggle="modal" data-bs-target="#modalCertyfikat3">
+            <img src="img/cer3.png" alt="Certyfikat3" class="img-fluid mb-3 service-image">
+            <h4>EN ISO 3834-3:2021</h4>
+            <p>Produkcja elementów spawanych do pojazdów szynowych.</p>
+        </div>
+    </div>
+</div>
     </div>
 </section>
 
@@ -370,6 +347,47 @@
         </p>
     </div>
 </footer>
+
+<!-- modals -->
+<div class="modal fade" id="modalCertyfikat1" tabindex="-1" aria-labelledby="modalCertyfikat1Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-custom">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="img/cer1.png" alt="Certyfikat" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalCertyfikat2" tabindex="-1" aria-labelledby="modalCertyfikat2Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-custom">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="img/cer2.png" alt="Certyfikat" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalCertyfikat3" tabindex="-1" aria-labelledby="modalCertyfikat3Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-custom">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="img/cer3.png" alt="Certyfikat" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -458,5 +476,18 @@ window.addEventListener('DOMContentLoaded',() =>{
   switchLang(lang);
 });
 </script>
+
+<script>
+  const modalImage=document.getElementById('modalCertificateImage');
+  const certificateModal=document.getElementById('certificateModal');
+
+  document.querySelectorAll('[data-bs-target="#certificateModal"]').forEach(link=>{
+    link.addEventListener('click',function (){
+      const imageSrc=this.getAttribute('data-image');
+      modalImage.setAttribute('src',imageSrc);
+    });
+  });
+</script>
+
 </body>
 </html>

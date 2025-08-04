@@ -337,7 +337,7 @@ body{
 <!--navigation bar-->
 <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.php">
       <i class="fas fa-tools"></i> MAKO-WELD
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
@@ -348,13 +348,19 @@ body{
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav me-3">
         <li class="nav-item">
-          <a class="nav-link" href="index.php" data-pl="Strona Główna" data-en="Main Page">Strona Główna</a>
+          <a class="nav-link active" href="index.php" data-pl="Strona Główna" data-en="Main Page">Strona Główna</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="about.php" data-pl="O nas" data-en="About Us">O Nas</a>
+          <a class="nav-link" href="about.php" data-pl="O Nas" data-en="About Us">O Nas</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="offer.php" data-pl="Oferta" data-en="Offer">Oferta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="certificates.php" data-pl="Certyfikaty" data-en="Certificates">Certyfikaty</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="news.php" data-pl="Aktualności" data-en="News feed">Aktualności</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contact.php" data-pl="Kontakt" data-en="Contact">Kontakt</a>
