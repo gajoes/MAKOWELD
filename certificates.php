@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title data-pl="MAKOWELD - Oferta" data-en="MAKOWELD - Offer">MAKO-WELD - Oferta</title>
+    <title data-pl="MAKOWELD - Certyfikaty" data-en="MAKOWELD - Certificates">MAKO-WELD - Oferta</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-XRBY41W6e6W4fWSo3eIQ1+r6KoiB84IzjReFdRJ4/nyZ8lHKEfEvOg1R9scCTg/C6DDLu5fcd1b2QAHN9h0Sjw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
     <style>
         body.light-mode{
             background-color: #ffffff;
@@ -243,6 +244,37 @@
         .dark-mode .modal-header .btn-close{
         filter: invert(1);
         }
+        .light-mode #langToggle {
+        background-color: #ffffff;
+        color: #000000;
+        border: 1px solid #ced4da;
+        }
+
+        .dark-mode #langToggle {
+        background-color: #2c2c2c;
+        color: #ffffff;
+        border: 1px solid #555555;
+        }
+
+        #langToggle option {
+        background-color: inherit;
+        color: inherit;
+        }
+
+        #langToggle {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23ccc' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 1rem;
+        padding-right: 2rem;
+        }
+
+        .dark-mode #langToggle {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23fff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+        }
     </style>
 </head>
 <body class="light-mode">
@@ -302,9 +334,6 @@
             <a href="#services" class="btn btn-primary btn-lg mt-4 cta-btn" data-pl="Zobacz Certyfikaty" data-en="View the Certificates">Zobacz Certyfikaty</a>
         </div>
     </div>
-    <video autoplay muted loop playsinline class="hero-bg-video">
-       <source src="./img/weld.mp4" type="video/mp4">
-    </video>
 </header>
 
 <section class="services-section py-5" id="services" data-aos="fade-up">
@@ -317,22 +346,22 @@
     <div class="col-md-4">
         <div class="service-card text-center shadow" data-bs-toggle="modal" data-bs-target="#modalCertyfikat1">
             <img src="img/cer1.png" alt="Certyfikat1" class="img-fluid mb-3 service-image">
-            <h4>EN 15085-2 CL2 w dziedzinie działalności P</h4>
-            <p>Spawanie pojazdów szynowych i części pojazdów.</p>
+            <h4 data-pl="EN 15085-2 CL2 w dziedzinie działalności P" data-en="EN 15085-2 CL2 in the field of activity P">EN 15085-2 CL2 w dziedzinie działalności P</h4>
+            <p data-pl="Spawanie pojazdów szynowych i części pojazdów." data-en="Railway vehicle and vehicle parts welding.">Spawanie pojazdów szynowych i części pojazdów.</p>
         </div>
     </div>
     <div class="col-md-4">
         <div class="service-card text-center shadow" data-bs-toggle="modal" data-bs-target="#modalCertyfikat2">
             <img src="img/cer2.png" alt="Certyfikat2" class="img-fluid mb-3 service-image">
             <h4>EN ISO 9001:2015</h4>
-            <p>Wytwarzanie konstrukcji stalowych i aluminiowych oraz elementów maszyn i urządzeń dla produkcji pojazdów szynowych i przemysłu spożywczego. Obróbka mechaniczna, plastyczna, spawanie i lutowanie.</p>
+            <p data-pl="Wytwarzanie konstrukcji stalowych i aluminiowych oraz elementów maszyn i urządzeń dla produkcji pojazdów szynowych i przemysłu spożywczego. Obróbka mechaniczna, plastyczna, spawanie i lutowanie." data-en="Manufacturing of steel and aluminum structures, as well as machine and equipment components for the rail vehicle industry and the food industry. Mechanical and plastic processing, welding, and soldering.">Wytwarzanie konstrukcji stalowych i aluminiowych oraz elementów maszyn i urządzeń dla produkcji pojazdów szynowych i przemysłu spożywczego. Obróbka mechaniczna, plastyczna, spawanie i lutowanie.</p>
         </div>
     </div>
     <div class="col-md-4">
         <div class="service-card text-center shadow" data-bs-toggle="modal" data-bs-target="#modalCertyfikat3">
             <img src="img/cer3.png" alt="Certyfikat3" class="img-fluid mb-3 service-image">
             <h4>EN ISO 3834-3:2021</h4>
-            <p>Produkcja elementów spawanych do pojazdów szynowych.</p>
+            <p data-pl="Produkcja elementów spawanych do pojazdów szynowych." data-en="Manufacturing welded components for railway vehicles">Produkcja elementów spawanych do pojazdów szynowych.</p>
         </div>
     </div>
 </div>
@@ -431,10 +460,10 @@
 
     serviceImages.forEach(image=>{
       image.addEventListener('mouseenter',()=>{
-        gsap.to(image,{ scale: 1.05,duration: 0.3 });
+        gsap.to(image,{ scale: 1.05,duration: 1.3 });
       });
       image.addEventListener('mouseleave',()=>{
-        gsap.to(image, { scale: 1,duration: 0.3 });
+        gsap.to(image, { scale: 1,duration: 1.3 });
       });
     });
 

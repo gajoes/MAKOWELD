@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
     <style>
         html, body {
             height: 100%;
@@ -161,6 +162,38 @@
                 margin: 0 10px;
                 font-size: 2rem;
             }
+        }
+
+        .light-mode #langToggle {
+        background-color: #ffffff;
+        color: #000000;
+        border: 1px solid #ced4da;
+        }
+
+        .dark-mode #langToggle {
+        background-color: #2c2c2c;
+        color: #ffffff;
+        border: 1px solid #555555;
+        }
+
+        #langToggle option {
+        background-color: inherit;
+        color: inherit;
+        }
+
+        #langToggle {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23ccc' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 1rem;
+        padding-right: 2rem;
+        }
+
+        .dark-mode #langToggle {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23fff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
         }
     </style>
 </head>

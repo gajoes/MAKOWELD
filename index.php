@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-XRBY41W6e6W4fWSo3eIQ1+r6KoiB84IzjReFdRJ4/nyZ8lHKEfEvOg1R9scCTg/C6DDLu5fcd1b2QAHN9h0Sjw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
 </head>
 <style>
 
@@ -342,6 +343,37 @@ body{
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.light-mode #langToggle {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ced4da;
+}
+
+.dark-mode #langToggle {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border: 1px solid #555555;
+}
+
+#langToggle option {
+    background-color: inherit;
+    color: inherit;
+}
+
+#langToggle {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23ccc' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    padding-right: 2rem;
+}
+
+.dark-mode #langToggle {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23fff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+}
 </style>
 
 <body class="light-mode">
@@ -401,16 +433,16 @@ body{
             <h1 class="display-3 fw-bold hero-title" data-aos="fade-down" data-pl="Profesjonalne usługi" data-en="Professional Services">Profesjonalne usługi</h1>
             <h1 class="display-3 fw-bold hero-title" data-aos="fade-down" data-pl="Spawalniczo-Ślusarskie" data-en="Welding & Locksmithing">Spawalniczo-ślusarskie</h1>
             <p class="lead mt-3" data-aos="fade-up" data-aos-delay="200" data-pl="Precyzja, Doświadczenie, Jakość. Tworzymy metalowe elementy z pasją i zaangażowaniem." data-en="Precision, Work experience, High Quality. We work with passion and engagement.">Precyzja, Doświadczenie, Jakość. Tworzymy metalowe elementy z pasją i zaangażowaniem.</p>
-            <a href="about.php" class="btn mt-4 btn-primary hero-cta" data-aos="zoom-in" data-aos-delay="400" data-pl="Dowiedz się więcej" data-en="Find out more">Dowiedz się więcej</a>
+            <a href="#about" class="btn mt-4 btn-primary hero-cta" data-aos="zoom-in" data-aos-delay="400" data-pl="Dowiedz się więcej" data-en="Find out more">Dowiedz się więcej</a>
         </div>
     </div>
     <video autoplay muted loop playsinline class="hero-bg-video">
-       <source src="./img/weld.mp4" type="video/mp4">
+       <source src="./img/bgw.mp4" type="video/mp4">
     </video>
 </header>
 
 <!--about section-->
-<section class="about-section py-5">
+<section class="about-section py-5" id="about">
     <div class="container" data-aos="fade-up" data-aos-offset="150">
         <div class="row align-items-center">
             <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
@@ -418,7 +450,7 @@ body{
             </div>
             <div class="col-md-6 mt-4 mt-md-0" data-aos="fade-left" data-aos-duration="1000">
                 <h2 class="mb-3" data-pl="O naszym zakładzie" data-en="About our company">O Naszym Zakładzie</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                <p data-pl="MAKO-WELD to nowoczesna firma, która stawia na precyzje, jakość i niezawodność. Specjalizujemy się w spawaniu aluminium, stali nierdzewnej oraz stali czarnej. Jeśli szukasz profesjonalnego partnera do realizacji swoich projektów, trafiłeś w punkt." data-en="MAKO-WELD is a modern company, which places importance on precision, quality and reliability. We specialise in aluminium, stainless steel and black steel welding. If You are looking for a professional parter to carry out your project, You have come to the right place.">MAKO-WELD to nowoczesna firma, która stawia na precyzje, jakość i niezawodność. Specjalizujemy się w spawaniu aluminium, stali nierdzewnej oraz stali czarnej. Jeśli szukasz profesjonalnego partnera do realizacji swoich projektów, trafiłeś w punkt.</p>
                 <a href="about.php" class="btn btn-primary mt-3 about-btn" data-pl="Poznaj nas bliżej" data-en="Get to know us better">Poznaj nas bliżej</a>
             </div>
         </div>

@@ -88,6 +88,7 @@ if (isset($_POST['logout'])){
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Panel Administratora</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
   <style>
     body { padding-top: 80px; }
     .admin-form { max-width: 500px; margin: auto; }
@@ -143,17 +144,22 @@ if (isset($_POST['logout'])){
   <?php else: ?>
     <h3 class="text-center mb-4">Dodaj nowy post</h3>
     <form action="upload_news.php" method="post" enctype="multipart/form-data" class="news-form border p-4 shadow rounded bg-light">
-      <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
-      <div class="mb-3">
-        <label for="title" class="form-label">Tytuł</label>
-        <input type="text" name="title" id="title" class="form-control" required />
-      </div>
-      <div class="mb-3">
-        <label for="content" class="form-label">Treść</label>
-        <textarea name="content" id="content" class="form-control" rows="5" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-success w-100">Dodaj aktualność</button>
-    </form>
+  <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
+  <div class="mb-3">
+    <label for="title" class="form-label">Tytuł</label>
+    <input type="text" name="title" id="title" class="form-control" required />
+  </div>
+  <div class="mb-3">
+    <label for="content" class="form-label">Treść</label>
+    <textarea name="content" id="content" class="form-control" rows="5" required></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="image" class="form-label">Zdjęcie (opcjonalnie)</label>
+    <input type="file" name="image" id="image" class="form-control" accept="image/*" />
+  </div>
+  <button type="submit" class="btn btn-success w-100">Dodaj aktualność</button>
+</form>
+
   <?php endif; ?>
 </div>
 

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-XRBY41W6e6W4fWSo3eIQ1+r6KoiB84IzjReFdRJ4/nyZ8lHKEfEvOg1R9scCTg/C6DDLu5fcd1b2QAHN9h0Sjw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
 </head>
 <style>
 
@@ -94,6 +95,10 @@ a:hover{
     padding: 60px 0;
 }
 
+.history-section{
+    padding: 60px 0;
+}
+
 .team-section{
     padding: 60px 0;
 }
@@ -112,6 +117,14 @@ a:hover{
     transition: transform 0.5s ease;
 }
 .about-section .about-img:hover{
+    transform: scale(1.05);
+}
+
+.history-section .history-img{
+    transition: transform 0.5s ease;
+    max-height: 700px;
+}
+.history-section .history-img:hover{
     transform: scale(1.05);
 }
 
@@ -331,6 +344,37 @@ body{
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
+.light-mode #langToggle {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ced4da;
+}
+
+.dark-mode #langToggle {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border: 1px solid #555555;
+}
+
+#langToggle option {
+    background-color: inherit;
+    color: inherit;
+}
+
+#langToggle {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23ccc' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    padding-right: 2rem;
+}
+
+.dark-mode #langToggle {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23fff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+}
 </style>
 
 <body class="light-mode">
@@ -464,11 +508,29 @@ body{
                 <img src="img/maszyna.png" alt="Nowoczesna tokarka" class="img-fluid rounded shadow">
             </div>
             <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
+                <h4 data-pl="Profesjonalne Usługi Spawalnicze" data-en="Professional Welding Services">Profesjonalne Usługi Spawalnicze</h4>
+                <p data-pl="Oferujemy kompleksowe usługi spawalnicze. Nasz doświadczony zespół spawaczy zapewnia trwałe i estetyczne spoiny, spełniające najwyższe normy jakościowe." data-en="We offer complex welding services. Our experienced welding team ensures durable and aesthetic welds that meet the highest quality standards.">Oferujemy kompleksowe usługi spawalnicze. Nasz doświadczony zespół spawaczy zapewnia trwałe i estetyczne spoiny, spełniające najwyższe normy jakościowe.</p>
                 <h4 data-pl="Nowoczesne Maszyny Tokarskie" data-en="Modern Turnery Machines">Nowoczesne Maszyny Tokarskie</h4>
                 <p data-pl="Posiadamy najnowsze maszyny tokarskie, które umożliwiają precyzyjną obróbkę metali w różnych gatunkach i rozmiarach. Dzięki temu jesteśmy w stanie realizować zlecenia o wysokich wymaganiach jakościowych." data-en="We possess the newest turnery machines, which allow us precise metal processing in different grades and sizes. Thanks to these machines we are able to realize orders of high quality requirement.">Posiadamy najnowsze maszyny tokarskie, które umożliwiają precyzyjną obróbkę metali w różnych gatunkach i rozmiarach. Dzięki temu jesteśmy w stanie realizować zlecenia o wysokich wymaganiach jakościowych.</p>
                 <h4 data-pl="Zaawansowane Technologie Ślusarskie" data-en="Highly Advanced Locksmithery Technology">Zaawansowane Technologie Ślusarskie</h4>
                 <p data-pl="Nasze zaplecze ślusarskie wyposażone jest w zaawansowane narzędzia i urządzenia, które pozwalają na tworzenie trwałych i funkcjonalnych elementów metalowych dostosowanych do potrzeb klienta." data-en="Our locksmithery department is equiped with highly advanced tools and machines, which allow us to create persistent and functional metal elements, that fit our client's requirements.">Nasze zaplecze ślusarskie wyposażone jest w zaawansowane narzędzia i urządzenia, które pozwalają na tworzenie trwałych i funkcjonalnych elementów metalowych dostosowanych do potrzeb klienta.</p>
                 <a href="offer.php" class="btn mt-4 btn-primary hero-cta" data-aos="zoom-in" data-aos-delay="400" data-pl="Dowiedz się więcej" data-en="Find out more">Dowiedz się więcej</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="history-section py-5">
+    <div class="container" data-aos="fade-up" data-aos-offset="150">
+        <div class="row align-items-center">
+            <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
+                <img src="img/budowa.png" alt="O nas" class="img-fluid rounded shadow history-img">
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0" data-aos="fade-left" data-aos-duration="1000">
+                <h2 class="mb-3" data-pl="Nasza Historia" data-en="Our History">Nasza Historia</h2>
+                <p data-pl="Firma Mako Weld Sp. z o.o. swój początek datuje na 7 stycznia 2021 roku.Aby zrozumieć jej genezę powstania należy sięgnąć do roku 1994, w którym to Adam Gryczewski wraz z małżonką postanowił otworzyć działalność gospodarczą o nazwie - Zakład Tokarsko Ślusarski „Jolanta i Adam”." data-en="The company Mako Weld Sp. z o.o. traces its origins back to January 7, 2021. To understand its beginnings, one must go back to the year 1994, when Adam Gryczewski, together with his wife, decided to start a business under the name Zakład Tokarsko Ślusarski „Jolanta i Adam”.".>Firma Mako Weld Sp. z o.o. swój początek datuje na 7 stycznia 2021 roku.Aby zrozumieć jej genezę powstania należy sięgnąć do roku 1994, w którym to Adam Gryczewski wraz z małżonką postanowił otworzyć działalność gospodarczą o nazwie - Zakład Tokarsko Ślusarski „Jolanta i Adam”.</p>
+                <p data-pl="Wówczas firma zajmowała się tylko obróbką skrawaniem i naprawą pojazdów silnikowych.Już w roku 1995 podpisane zostały długoterminowe i obowiązujące do dziś umowy z firmami ZENTIS i KAVIS na produkcję oraz remonty urządzeń przemysłu spożywczego. W roku 1999 zapadła decyzja o zatrudnieniu pierwszego pracownika i poszerzono zakres działalności o spawanie konstrukcji stalowych. Firma wraz z upływem lat i wzrostem zatrudnienia otrzymywała coraz bardziej odpowiedzialne zlecenia, aż do roku 2008, kiedy to po negocjacjach i długich rozmowach nawiązano współpracę z firmą STADLER Polska. Współpraca ta spowodowała jeszcze szybszy rozwój i konieczność wprowadzenia do firmy nowych technologii i urządzeń do spawania aluminium i stali nierdzewnych." data-en="At that time, the company focused solely on machining and motor vehicle repairs. As early as 1995, long-term contracts were signed-with ZENTIS and KAVIS-for the production and repair of food industry equipment, and these agreements remain in effect to this day. In 1999, the decision was made to hire the first employee, and the company expanded its operations to include the welding of steel structures. Over the years, as the workforce grew, the company received increasingly demanding and responsible assignments. This progression culminated in 2008, when-after negotiations and lengthy discussions-a cooperation agreement was established with STADLER Polska. This partnership significantly accelerated the company’s growth and led to the introduction of new technologies and equipment for welding aluminum and stainless steel.">Wówczas firma zajmowała się tylko obróbką skrawaniem i naprawą pojazdów silnikowych.Już w roku 1995 podpisane zostały długoterminowe i obowiązujące do dziś umowy z firmami ZENTIS i KAVIS na produkcję oraz remonty urządzeń przemysłu spożywczego.W roku 1999 zapadła decyzja o zatrudnieniu pierwszego pracownika i poszerzono zakres działalności o spawanie konstrukcji stalowych. Firma wraz z upływem lat i wzrostem zatrudnienia otrzymywała coraz bardziej odpowiedzialne zlecenia, aż do roku 2008, kiedy to po negocjacjach i długich rozmowach nawiązano współpracę z firmą STADLER Polska. Współpraca ta spowodowała jeszcze szybszy rozwój i konieczność wprowadzenia do firmy nowych technologii i urządzeń do spawania aluminium i stali nierdzewnych.</p>
+                <p data-pl="Rok 2015 przyniósł kolejne zmiany, firma sprostała wymaganiom normy PN-EN 15085 „System Jakości dla spawania pojazdów szynowych”, a rok później wykonano kolejny krok i postanowiono wdrożyć kolejny system jakości dla normy PN EN 1090-2 „Wykonanie konstrukcji stalowych i aluminiowych”. Od roku 2020 firma posiada system zarządzania jakością DIN EN ISO 9001. Kolejnym krokiem jest poszerzenie współpracy z innymi firmami przemysłu kolejowego i transportu publicznego." data-en="The year 2015 brought further changes, as the company met the requirements of the PN-EN 15085 standard, „Quality Requirements for Welding of Railway Vehicles and Components”. A year later, another step was taken with the decision to implement a new quality system in accordance with the PN-EN 1090-2 standard, „Execution of Steel and Aluminium Structures”. Since 2020, the company has operated under a quality management system compliant with DIN EN ISO 9001. The next step is to expand cooperation with other companies in the railway and public transportation industries.">Rok 2015 przyniósł kolejne zmiany, firma sprostała wymaganiom normy PN-EN 15085 „System Jakości dla spawania pojazdów szynowych”, a rok później wykonano kolejny krok i postanowiono wdrożyć kolejny system jakości dla normy PN EN 1090-2 „Wykonanie konstrukcji stalowych i aluminiowych”. Od roku 2020 firma posiada system zarządzania jakością DIN EN ISO 9001. Kolejnym krokiem jest poszerzenie współpracy z innymi firmami przemysłu kolejowego i transportu publicznego.</p>
             </div>
         </div>
     </div>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-XRBY41W6e6W4fWSo3eIQ1+r6KoiB84IzjReFdRJ4/nyZ8lHKEfEvOg1R9scCTg/C6DDLu5fcd1b2QAHN9h0Sjw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
     <style>
         body.light-mode{
             background-color: #ffffff;
@@ -229,6 +230,37 @@
         z-index: -1;
         opacity: 0.5;
         }
+        .light-mode #langToggle {
+        background-color: #ffffff;
+        color: #000000;
+        border: 1px solid #ced4da;
+        }
+
+        .dark-mode #langToggle {
+        background-color: #2c2c2c;
+        color: #ffffff;
+        border: 1px solid #555555;
+        }
+
+        #langToggle option {
+        background-color: inherit;
+        color: inherit;
+        }
+
+        #langToggle {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23ccc' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 1rem;
+        padding-right: 2rem;
+        }
+
+        .dark-mode #langToggle {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23fff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+        }
     </style>
 </head>
 <body class="light-mode">
@@ -289,9 +321,6 @@
             <a href="#services" class="btn btn-primary btn-lg mt-4 cta-btn" data-pl="Zobacz usługi" data-en="View the services">Zobacz Usługi</a>
         </div>
     </div>
-    <video autoplay muted loop playsinline class="hero-bg-video">
-       <source src="./img/weld.mp4" type="video/mp4">
-    </video>
 </header>
 
 <!--services-->
@@ -304,15 +333,15 @@
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="service-card text-center shadow">
-                    <img src="images/usluga1.jpg" alt="Usługa 1" class="img-fluid mb-3 service-image">
-                    <h4 data-pl="Obróbka Tokarska" data-en="Turning operation">Obróbka Tokarska</h4>
+                    <img src="img/turnery.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
+                    <h4 data-pl="Obróbka Tokarska" data-en="Turnering operation">Obróbka Tokarska</h4>
                     <p data-pl="Obróbka tokarska to precyzyjna metoda kształtowania metalu, idealna do tworzenia elementów o wysokiej jakości i dokładności." data-en="Turnery processing is a precise method of shaping metal, ideal for producing high-quality and accurate components.">Obróbka tokarska to precyzyjna metoda kształtowania metalu, idealna do tworzenia elementów o wysokiej jakości i dokładności.</p>
                     <a href="#" class="stretched-link"></a>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="service-card text-center shadow">
-                    <img src="images/usluga2.jpg" alt="Usługa 2" class="img-fluid mb-3 service-image">
+                  <img src="img/locksmithing.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
                     <h4 data-pl="Ślusarstwo" data-en="Locksmithing">Ślusarstwo</h4>
                     <p data-pl="Ślusarstwo to fachowa obróbka metali, dzięki której powstają solidne i trwałe konstrukcje oraz elementy mechaniczne." data-en="Locksmithing is an advanced metal processing that results in solid and durable structures and mechanical parts.">Ślusarstwo to fachowa obróbka metali, dzięki której powstają solidne i trwałe konstrukcje oraz elementy mechaniczne.</p>
                     <a href="#" class="stretched-link"></a>
@@ -320,7 +349,7 @@
             </div>
             <div class="col-md-4">
                 <div class="service-card text-center shadow">
-                    <img src="images/usluga3.jpg" alt="Usługa 3" class="img-fluid mb-3 service-image">
+                  <img src="img/prototype.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
                     <h4 data-pl="Prototypowanie" data-en="Prototyping">Prototypowanie</h4>
                     <p data-pl="Prototypowanie to kluczowy etap tworzenia innowacyjnych produktów, który pozwala szybko przekształcić pomysł w realny model." data-en="Prototyping is a crucial stage in developing innovative products which allows you to quickly turn an idea into a tangible model.">Prototypowanie to kluczowy etap tworzenia innowacyjnych produktów, który pozwala szybko przekształcić pomysł w realny model.</p>
                     <a href="#" class="stretched-link"></a>
@@ -328,7 +357,8 @@
             </div>
             <div class="col-md-4">
                 <div class="service-card text-center shadow">
-                    <img src="images/usluga4.jpg" alt="Usługa 4" class="img-fluid mb-3 service-image">
+                  <img src="img/weld.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
+                  <img src="img/al.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
                     <h4 data-pl="Spawanie aluminium" data-en="Aluminium welding">Spawanie aluminium</h4>
                     <p data-pl="Spawanie aluminium to specjalistyczny proces łączenia lekkiego, wytrzymałego i odpornego na korozję metalu." data-en="Aluminum welding is a specialized process of joining lightweight, durable, and corrosion-resistant metal.">Spawanie aluminium to specjalistyczny proces łączenia lekkiego, wytrzymałego i odpornego na korozję metalu.</p>
                     <a href="#" class="stretched-link"></a>
@@ -336,7 +366,8 @@
             </div>
             <div class="col-md-4">
                 <div class="service-card text-center shadow">
-                    <img src="images/usluga5.jpg" alt="Usługa 5" class="img-fluid mb-3 service-image">
+                  <img src="img/weld.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
+                  <img src="img/ss.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
                     <h4 data-pl="Spawanie stali nierdzewnej (stopy niklu)" data-en="Stainless steel welding (nickel alloys)">Spawanie stali nierdzewnej (stopy niklu)</h4>
                     <p data-pl="Spawanie stali nierdzewnej (w tym stopów niklu) to precyzyjny proces łączenia metali odpornych na korozję, wysokie temperatury i działanie chemikaliów." data-en="Welding stainless steel (including nickel alloys) is a precise process of joining metals resistant to corrosion, high temperatures, and chemicals.">Spawanie stali nierdzewnej (w tym stopów niklu) to precyzyjny proces łączenia metali odpornych na korozję, wysokie temperatury i działanie chemikaliów.</p>
                     <a href="#" class="stretched-link"></a>
@@ -344,7 +375,8 @@
             </div>
             <div class="col-md-4">
                 <div class="service-card text-center shadow">
-                    <img src="images/usluga6.jpg" alt="Usługa 6" class="img-fluid mb-3 service-image">
+                  <img src="img/weld.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
+                  <img src="img/bs.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
                     <h4 data-pl="Spawanie stali SG2,SG3" data-en="SG2,SG3 steel welding">Spawanie stali SG2, SG3</h4>
                     <p data-pl="Spawanie stali SG2 i SG3 to popularna metoda łączenia niskowęglowych stali konstrukcyjnych, zapewniająca dobre własności mechaniczne i wysoką jakość spoin." data-en="Welding SG2 and SG3 steel is a common method for joining low-carbon structural steels, offering good mechanical properties and high-quality welds.">Spawanie stali SG2 i SG3 to popularna metoda łączenia niskowęglowych stali konstrukcyjnych, zapewniająca dobre własności mechaniczne i wysoką jakość spoin.</p>
                     <a href="#" class="stretched-link"></a>
