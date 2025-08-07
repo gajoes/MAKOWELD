@@ -195,6 +195,45 @@
         .dark-mode #langToggle {
         background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23fff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
         }
+        @keyframes ring {
+        0% { transform: rotate(0); }
+        10% { transform: rotate(15deg); }
+        20% { transform: rotate(-10deg); }
+        30% { transform: rotate(15deg); }
+        40% { transform: rotate(-10deg); }
+        50% { transform: rotate(5deg); }
+        60% { transform: rotate(-5deg); }
+        70% { transform: rotate(0); }
+        100% { transform: rotate(0); }
+        }
+
+        @keyframes send-mail {
+        0% { transform: translateY(0); }
+        30% { transform: translateY(-10px); }
+        60% { transform: translateY(0); }
+        100% { transform: translateY(-5px); }
+        }
+
+        @keyframes rotate-clock {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+        }
+
+        .contact-section p i {
+        transition: transform 0.3s ease;
+        }
+
+        .contact-section p:hover i.fa-phone {
+        animation: ring 1s ease-in-out;
+        }
+
+        .contact-section p:hover i.fa-envelope {
+        animation: send-mail 0.6s ease-in-out;
+        }
+
+        .contact-section p:hover i.fa-clock {
+        animation: rotate-clock 1.5s linear infinite;
+        }
     </style>
 </head>
 <body class="light-mode">

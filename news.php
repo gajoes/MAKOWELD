@@ -3,10 +3,19 @@ require_once __DIR__ . '/../config/db.php';
 $conn=db_connect();
 
 $news_items=[];
-$result = $conn->query("SELECT title, content, title_en, content_en, created_at, image_path FROM news ORDER BY created_at DESC");
-if ($result) {
+$adminNames=[
+    'admin_Kacper'=>'Kacper Gajowniczek',
+    'admin_Magda'=>'Magdalena Gajowniczek',
+    'admin_Michal'=>'Michał Fałek',
+    'admin_Dzmitry'=>'Dzmitry Yurchyk',
+    'admin_Jacek'=>'Jacek Siewruk'
+];
+
+$result=$conn->query("SELECT title,content,title_en,content_en,created_at, image_path,added_by FROM news ORDER BY created_at DESC");
+if ($result){
     while ($row=$result->fetch_assoc()){
-        $news_items[]=$row;
+      $row['added_by_name']=isset($adminNames[$row['added_by']]) ? $adminNames[$row['added_by']] : 'Nieznany admin';
+      $news_items[]=$row;
     }
 }
 
@@ -239,13 +248,14 @@ a:hover { text-decoration: underline; }
     <div class="container-fluid px-lg-5" data-aos="fade-up">
       <div class="text-center mb-5">
         <h2 data-pl="Aktualności" data-en="Newsfeed">Aktualności</h2>
-        <p class="text-muted" data-pl="Nowości w MAKO-WELD" data-en="News in MAKO-WELD">Nowości w MAKO-WELD</p>
+        <p class="text-muted" data-pl="Nowości w MAKO-WELD" data-en="What's new in MAKO-WELD">Nowości w MAKO-WELD</p>
       </div>
       <div class="d-flex flex-wrap gap-4 justify-content-center">
         <?php foreach ($news_items as $index => $item): 
          $safeTitle = htmlspecialchars($item['title'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
          $safeContent=htmlspecialchars($item['content'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
          $formattedDate=date('d.m.Y H:i',strtotime($item['created_at']));
+         $dataAuthor=htmlspecialchars($item['added_by_name'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
         ?>
 
         <?php 
@@ -258,6 +268,7 @@ a:hover { text-decoration: underline; }
              data-title-en="<?=$safeTitleEN ?>" 
              data-content-en="<?=$safeContentEN ?>" 
              data-date="<?=$formattedDate ?>"
+             data-author="<?= $dataAuthor ?>"
              data-image="<?=isset($item['image_path']) ? htmlspecialchars($item['image_path'], ENT_QUOTES | ENT_HTML5, 'UTF-8') : '' ?>"
              style="display: none;">
         
@@ -268,6 +279,10 @@ a:hover { text-decoration: underline; }
             <div class="card-body flex-grow-1">
             <h5 class="card-title" data-title-pl="<?= $safeTitle ?>" data-title-en="<?= $safeTitleEN ?>"><?= $safeTitle ?></h5>
               <p class="text-muted small"><?= $formattedDate ?></p>
+              <p class="text-muted small">
+                <span data-pl="Dodane przez" data-en="Posted by">Dodane przez</span>: 
+                <span><?= $dataAuthor ?></span>
+              </p>
               <p class="text-muted" data-pl="Kliknij, aby zobaczyć więcej" data-en="Click to view more">
                 Kliknij, aby zobaczyć więcej
               </p>
@@ -278,7 +293,7 @@ a:hover { text-decoration: underline; }
       </div>
     </div>
     <div class="text-center mt-4">
-        <button id="loadMoreBtn" class="btn btn-primary" data-pl="Pokaż więcej" data-en="Show more">Pokaż więcej</button>
+      <nav id="pagination" class="pagination justify-content-center"></nav>
     </div>
   </section>
 </main>
@@ -300,6 +315,7 @@ a:hover { text-decoration: underline; }
             <small id="newsModalDate" class="text-muted mb-2"></small>
             <h5 id="newsModalTitleText" class="mb-3"></h5>
             <div id="newsModalContent"></div>
+            <div id="newsModalAuthor" class="text-end text-muted small mt-3"></div> 
           </div>
         </div>
       </div>
@@ -362,54 +378,71 @@ a:hover { text-decoration: underline; }
     updateCardTitles(lang);
   });
 
-   document.querySelectorAll('.news-tile').forEach(tile =>{
-  tile.addEventListener('click',() =>{
-    const lang=localStorage.getItem('lang') || 'pl';
-    const title=tile.dataset[lang==='en' ? 'titleEn' : 'titlePl'] || '';
-    const content=tile.dataset[lang==='en' ? 'contentEn' : 'contentPl'] || '';
-    const date=tile.dataset.date || '';
-    const image=tile.dataset.image || '';
+document.querySelectorAll('.news-tile').forEach(tile => {
+  tile.addEventListener('click', () => {
+    const lang = localStorage.getItem('lang') || 'pl';
+    const title = tile.dataset[lang === 'en' ? 'titleEn' : 'titlePl'] || '';
+    const content = tile.dataset[lang === 'en' ? 'contentEn' : 'contentPl'] || '';
+    const date = tile.dataset.date || '';
+    const image = tile.dataset.image || '';
+    const author = tile.dataset.author || '';
 
-    document.getElementById('newsModalTitleText').textContent=title;
-    document.getElementById('newsModalDate').textContent=date;
-    document.getElementById('newsModalContent').innerHTML=content;
-    document.getElementById('newsModalImage').src=image;
+    document.getElementById('newsModalTitleText').textContent = title;
+    document.getElementById('newsModalDate').textContent = date;
+    document.getElementById('newsModalContent').innerHTML = content;
+    document.getElementById('newsModalImage').src = image;
+    document.getElementById('newsModalAuthor').textContent = lang === 'en'
+      ? 'Posted by: ' + author
+      : 'Dodane przez: ' + author;
 
     const modal = new bootstrap.Modal(document.getElementById('newsModal'));
     modal.show();
   });
 });
 
-  const itemsPerPage=6;
+const itemsPerPage=6;
 let currentPage=1;
 
-function showNewsItems(){
+function paginateNewsItems(){
   const items=document.querySelectorAll('.news-item');
   const totalItems=items.length;
-  const maxVisible=currentPage * itemsPerPage;
+  const totalPages=Math.ceil(totalItems/itemsPerPage);
+  const pagination=document.getElementById('pagination');
+
+  items.forEach(item =>item.style.display='none');
+
+  const start=(currentPage - 1)*itemsPerPage;
+  const end=start+itemsPerPage;
 
   items.forEach((item, index) =>{
-    if (index<maxVisible){
+    if (index >=start && index < end){
       item.style.display='block';
     }
   });
 
-  if (maxVisible >= totalItems){
-    document.getElementById('loadMoreBtn').style.display='none';
+  pagination.innerHTML='';
+  for (let i=1; i <=totalPages; i++){
+    const pageBtn = document.createElement('button');
+    pageBtn.classList.add('btn', 'btn-sm', 'mx-1', 'btn-outline-primary');
+    if (i===currentPage){
+      pageBtn.classList.add('active');
+    }
+    pageBtn.textContent=i;
+    pageBtn.addEventListener('click', () =>{
+      currentPage=i;
+      paginateNewsItems();
+      window.scrollTo({ top: 0,behavior: 'smooth'});
+    });
+    pagination.appendChild(pageBtn);
   }
 }
 
 document.addEventListener('DOMContentLoaded', () =>{
-  showNewsItems();
-  const lang = localStorage.getItem('lang') || 'pl';
+  const lang=localStorage.getItem('lang') || 'pl';
   document.getElementById('langToggle').value=lang;
   switchLang(lang);
   updateCardTitles(lang);
-});
-
-document.getElementById('loadMoreBtn').addEventListener('click', () =>{
-  currentPage++;
-  showNewsItems();
+  paginateNewsItems();
 });
 </script>
 </body>

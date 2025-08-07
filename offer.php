@@ -143,6 +143,7 @@
             height: 100%;
             position: relative;
             overflow: hidden;
+            transition: filter 0.7s ease;
         }
         
         .dark-mode .service-card{
@@ -176,7 +177,7 @@
         }
         
         .dark-mode .cta-section{
-            background: #333333;
+            background: #2a2a2a;
             color: #ffffff;
         }
         
@@ -202,6 +203,7 @@
         .dark-mode .footer-section{
             background-color: #333333;
             color: #ffffff;
+            box-shadow: 0 -2px 5px rgba(255,255,255,0.05);
         }
         
         .text-muted{
@@ -218,7 +220,6 @@
 
         .blur{
             filter: blur(4px);
-            transition: filter 0.3s ease;
         }
         .hero-bg-video{
         position: absolute;
@@ -260,6 +261,10 @@
 
         .dark-mode #langToggle {
         background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23fff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+        }
+
+        .dark-mode .service-image {
+        filter: brightness(0) invert(1);
         }
     </style>
 </head>
@@ -333,30 +338,6 @@
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="service-card text-center shadow">
-                    <img src="img/turnery.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
-                    <h4 data-pl="Obróbka Tokarska" data-en="Turnering operation">Obróbka Tokarska</h4>
-                    <p data-pl="Obróbka tokarska to precyzyjna metoda kształtowania metalu, idealna do tworzenia elementów o wysokiej jakości i dokładności." data-en="Turnery processing is a precise method of shaping metal, ideal for producing high-quality and accurate components.">Obróbka tokarska to precyzyjna metoda kształtowania metalu, idealna do tworzenia elementów o wysokiej jakości i dokładności.</p>
-                    <a href="#" class="stretched-link"></a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-card text-center shadow">
-                  <img src="img/locksmithing.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
-                    <h4 data-pl="Ślusarstwo" data-en="Locksmithing">Ślusarstwo</h4>
-                    <p data-pl="Ślusarstwo to fachowa obróbka metali, dzięki której powstają solidne i trwałe konstrukcje oraz elementy mechaniczne." data-en="Locksmithing is an advanced metal processing that results in solid and durable structures and mechanical parts.">Ślusarstwo to fachowa obróbka metali, dzięki której powstają solidne i trwałe konstrukcje oraz elementy mechaniczne.</p>
-                    <a href="#" class="stretched-link"></a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-card text-center shadow">
-                  <img src="img/prototype.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
-                    <h4 data-pl="Prototypowanie" data-en="Prototyping">Prototypowanie</h4>
-                    <p data-pl="Prototypowanie to kluczowy etap tworzenia innowacyjnych produktów, który pozwala szybko przekształcić pomysł w realny model." data-en="Prototyping is a crucial stage in developing innovative products which allows you to quickly turn an idea into a tangible model.">Prototypowanie to kluczowy etap tworzenia innowacyjnych produktów, który pozwala szybko przekształcić pomysł w realny model.</p>
-                    <a href="#" class="stretched-link"></a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-card text-center shadow">
                   <img src="img/weld.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
                   <img src="img/al.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
                     <h4 data-pl="Spawanie aluminium" data-en="Aluminium welding">Spawanie aluminium</h4>
@@ -379,6 +360,30 @@
                   <img src="img/bs.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
                     <h4 data-pl="Spawanie stali SG2,SG3" data-en="SG2,SG3 steel welding">Spawanie stali SG2, SG3</h4>
                     <p data-pl="Spawanie stali SG2 i SG3 to popularna metoda łączenia niskowęglowych stali konstrukcyjnych, zapewniająca dobre własności mechaniczne i wysoką jakość spoin." data-en="Welding SG2 and SG3 steel is a common method for joining low-carbon structural steels, offering good mechanical properties and high-quality welds.">Spawanie stali SG2 i SG3 to popularna metoda łączenia niskowęglowych stali konstrukcyjnych, zapewniająca dobre własności mechaniczne i wysoką jakość spoin.</p>
+                    <a href="#" class="stretched-link"></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card text-center shadow">
+                    <img src="img/turnery.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
+                    <h4 data-pl="Obróbka Tokarska" data-en="Turnering operation">Obróbka Tokarska</h4>
+                    <p data-pl="Obróbka tokarska to precyzyjna metoda kształtowania metalu, idealna do tworzenia elementów o wysokiej jakości i dokładności." data-en="Turnery processing is a precise method of shaping metal, ideal for producing high-quality and accurate components.">Obróbka tokarska to precyzyjna metoda kształtowania metalu, idealna do tworzenia elementów o wysokiej jakości i dokładności.</p>
+                    <a href="#" class="stretched-link"></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card text-center shadow">
+                  <img src="img/locksmithing.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
+                    <h4 data-pl="Ślusarstwo" data-en="Locksmithing">Ślusarstwo</h4>
+                    <p data-pl="Ślusarstwo to fachowa obróbka metali, dzięki której powstają solidne i trwałe konstrukcje oraz elementy mechaniczne." data-en="Locksmithing is an advanced metal processing that results in solid and durable structures and mechanical parts.">Ślusarstwo to fachowa obróbka metali, dzięki której powstają solidne i trwałe konstrukcje oraz elementy mechaniczne.</p>
+                    <a href="#" class="stretched-link"></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card text-center shadow">
+                  <img src="img/prototype.png" alt="Usługa 1" class="img-fluid mb-3 service-image">
+                    <h4 data-pl="Prototypowanie" data-en="Prototyping">Prototypowanie</h4>
+                    <p data-pl="Prototypowanie to kluczowy etap tworzenia innowacyjnych produktów, który pozwala szybko przekształcić pomysł w realny model." data-en="Prototyping is a crucial stage in developing innovative products which allows you to quickly turn an idea into a tangible model.">Prototypowanie to kluczowy etap tworzenia innowacyjnych produktów, który pozwala szybko przekształcić pomysł w realny model.</p>
                     <a href="#" class="stretched-link"></a>
                 </div>
             </div>

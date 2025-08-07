@@ -191,8 +191,10 @@ a:hover{
 }
 
 .dark-mode .service-card{
-    background-color: #2c2c2c;
+    background-color: #1e1e1e;
     color: #ffffff;
+    border: 1px solid #444;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
 }
 
 .service-icon{
@@ -239,92 +241,6 @@ a:hover{
 
 .dark-mode .text-muted{
     color: #cccccc !important;
-}
-
-.login-container{
-    height: 100vh;
-    background: linear-gradient(135deg, #e2e2e2 0%, #c9d6ff 100%);
-    position: relative;
-}
-
-.dark-mode .login-container{
-    background: linear-gradient(135deg, #333333 0%, #555555 100%);
-}
-
-.login-card{
-    background: #ffffff;
-    border-radius: 15px;
-    padding: 2rem;
-    min-width: 300px;
-    max-width: 400px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.dark-mode .login-card{
-    background: #2c2c2c;
-    color: #ffffff;
-}
-
-.form-login, .form-register{
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.toggle-form{
-    color: #007bff;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.dark-mode .toggle-form{
-    color: #66aaff;
-}
-
-.alert-box{
-    position: absolute;
-    top: -80px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #ffffff;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    color: #000000;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    z-index: 10;
-}
-
-.success-alert{
-    background: #d4edda;
-    border: 1px solid #c3e6cb;
-    color: #155724;
-}
-
-.error-alert{
-    background: #f8d7da;
-    border: 1px solid #f5c6cb;
-    color: #721c24;
-}
-
-.dark-mode .success-alert{
-    background: #1e5128;
-    border: 1px solid #145418;
-    color: #d4fcd5;
-}
-
-.dark-mode .error-alert{
-    background: #581b1e;
-    border: 1px solid #a33a3f;
-    color: #f8d7da;
-}
-
-.form-control:focus{
-    box-shadow: 0 0 5px rgba(0,0,255,0.3);
 }
 
 .btn-primary{
@@ -437,7 +353,7 @@ body{
         </div>
     </div>
     <video autoplay muted loop playsinline class="hero-bg-video">
-       <source src="./img/bgw.mp4" type="video/mp4">
+       <source src="./img/backgroundweld.mp4" type="video/mp4">
     </video>
 </header>
 
@@ -511,11 +427,6 @@ body{
         <p class="mb-0">
             &copy;<?php echo date("Y"); ?> <span data-pl="MAKO-WELD. Wszelkie prawa zastrzeżone." data-en="MAKO-WELD. All rights reserved."></span>
         </p>
-        <div class="mt-2">
-            <a href="#" class="me-3"><i class="fab fa-facebook fa-lg"></i></a>
-            <a href="#" class="me-3"><i class="fab fa-linkedin fa-lg"></i></a>
-            <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
-        </div>
     </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

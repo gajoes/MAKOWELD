@@ -2,7 +2,7 @@
     session_start();
     
     if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !==true){
-        header("Location: admin.php");
+        header("Location: dIdn4nDqBTp0xyw.php");
         exit();
     }
     
@@ -13,20 +13,20 @@
     require_once __DIR__ . '/../config/db.php';
     $conn = db_connect();
     
-    function translate($text, $targetLang = 'en'){
+    function translate($text, $targetLang='en'){
         $apiKey='AIzaSyCXomBN774BsxQBvbdcm9UvncrBzAfUFaU';
         $url='https://translation.googleapis.com/language/translate/v2';
     
         $data=[
-            'q' =>$text,
-            'target' =>$targetLang,
-            'format' =>'text',
-            'key' =>$apiKey,
+            'q'=>$text,
+            'target'=>$targetLang,
+            'format'=>'text',
+            'key'=>$apiKey,
         ];
     
         $ch=curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch,CURLOPT_POSTFIELDS,http_build_query($data));
         $response=curl_exec($ch);
         curl_close($ch);
     
@@ -40,13 +40,12 @@
     }
     
     if ($_SERVER['REQUEST_METHOD']==='POST' && !isset($_POST['confirm_translation'])){
-        $title = isset($_POST['title']) ? trim($_POST['title']) : '';
-        $content = isset($_POST['content']) ? trim($_POST['content']) : '';
+        $title=isset($_POST['title']) ? trim($_POST['title']) : '';
+        $content=isset($_POST['content']) ? trim($_POST['content']) : '';
     
         if (empty($title) || empty($content)){
             die("Tytuł i treść są wymagane.");
         }
-    
         if (mb_strlen($title)>255){
             die("Tytuł jest za długi (maks. 255 znaków).");
         }
@@ -60,14 +59,15 @@
             <meta charset="UTF-8">
             <title>Edytuj tłumaczenie</title>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+            <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
         </head>
         <body class="container py-5">
             <h2 class="mb-4">Sprawdź i edytuj tłumaczenie</h2>
             <form method="post" action="upload_news.php" enctype="multipart/form-data">
-                <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
+                <input type="hidden" name="csrf_token" value="<?=$_SESSION['csrf_token'] ?>">
                 <input type="hidden" name="confirm_translation" value="1">
-                <input type="hidden" name="title" value="<?= htmlspecialchars($title) ?>">
-                <input type="hidden" name="content" value="<?= htmlspecialchars($content) ?>">
+                <input type="hidden" name="title" value="<?=htmlspecialchars($title) ?>">
+                <input type="hidden" name="content" value="<?=htmlspecialchars($content) ?>">
     
                 <div class="mb-3">
                     <label class="form-label">Tytuł (EN):</label>
@@ -85,7 +85,7 @@
                 </div>
     
                 <button type="submit" class="btn btn-primary">Zapisz do bazy</button>
-                <a href="admin.php" class="btn btn-secondary ms-2">Anuluj</a>
+                <a href="dIdn4nDqBTp0xyw.php" class="btn btn-secondary ms-2">Anuluj</a>
             </form>
         </body>
         </html>
@@ -133,10 +133,10 @@
                 $imagePath='image.php?file='.$filename;
             }
     
-        $stmt=$conn->prepare("INSERT INTO news (title,content,title_en,content_en,image_path,created_at) VALUES (?,?,?,?,?, NOW())");
-        $stmt->bind_param("sssss",$safeTitle,$safeContent,$safeTitleEN,$safeContentEN,$imagePath);
-    
-    
+        $admin=$_SESSION['admin_username'];
+        $stmt=$conn->prepare("INSERT INTO news (title,content,title_en,content_en,image_path,added_by,created_at) VALUES (?,?,?,?,?,?, NOW())");
+        $stmt->bind_param("ssssss",$safeTitle,$safeContent,$safeTitleEN,$safeContentEN,$imagePath,$admin);
+
         if ($stmt->execute()){
             $news_id =$stmt->insert_id;
             $ip=$_SERVER['REMOTE_ADDR'];
@@ -149,8 +149,7 @@
         }
         $stmt->close();
         $conn->close();
-    
-        header("Location: admin.php");
+        header("Location: dIdn4nDqBTp0xyw.php?success=1");
         exit();
     }
     ?>
