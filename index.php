@@ -386,7 +386,7 @@ body{
                     <i class="fas fa-cog fa-3x mb-3 service-icon"></i>
                     <h5 data-pl="Spawanie aluminium" data-en="Aluminium welding">Spawanie aluminium</h5>
                     <p data-pl="Spawanie aluminium to specjalistyczny proces łączenia lekkiego, wytrzymałego i odpornego na korozję metalu, wymagający precyzji, doświadczenia i odpowiedniej technologii." data-en="Aluminum welding is a process of joining lightweight, durable metal, requiring precision, experience, and proper technology.">Spawanie aluminium to specjalistyczny proces łączenia lekkiego, wytrzymałego i odpornego na korozję metalu, wymagający precyzji, doświadczenia i odpowiedniej technologii.</p>
-                    <a href="#" class="stretched-link"></a>
+                    <a href="offer.php" class="stretched-link"></a>
                 </div>
             </div>
             <div class="col-md-4 d-flex">
@@ -394,7 +394,7 @@ body{
                     <i class="fas fa-wrench fa-3x mb-3 service-icon"></i>
                     <h5 data-pl="Spawanie stali nierdzewnej (stopy niklu)" data-en="Stainless steel welding (nickel alloys)">Spawanie stali nierdzewnej (stopy niklu)</h5>
                     <p data-pl="Spawanie stali nierdzewnej (w tym stopów niklu) to precyzyjny proces łączenia metali odpornych na korozję, wysokie temperatury i działanie chemikaliów." data-en="Welding stainless steel (including nickel alloys) is a precise process of joining metals resistant to corrosion, high temperatures, and chemicals.">Spawanie stali nierdzewnej (w tym stopów niklu) to precyzyjny proces łączenia metali odpornych na korozję, wysokie temperatury i działanie chemikaliów.</p>
-                    <a href="#" class="stretched-link"></a>
+                    <a href="offer.php" class="stretched-link"></a>
                 </div>
             </div>
             <div class="col-md-4 d-flex">
@@ -402,7 +402,7 @@ body{
                     <i class="fas fa-industry fa-3x mb-3 service-icon"></i>
                     <h5 data-pl="Spawanie stali SG2,SG3" data-en="SG2,SG3 steel welding">Spawanie stali SG2, SG3</h5>
                     <p data-pl="Spawanie stali SG2 i SG3 to popularna metoda łączenia niskowęglowych stali konstrukcyjnych, zapewniająca dobre własności mechaniczne i wysoką jakość spoin." data-en="Welding SG2 and SG3 steel is a common method for joining low-carbon structural steels, offering good mechanical properties and high-quality welds.">Spawanie stali SG2 i SG3 to popularna metoda łączenia niskowęglowych stali konstrukcyjnych, zapewniająca dobre własności mechaniczne i wysoką jakość spoin.</p>
-                    <a href="#" class="stretched-link"></a>
+                    <a href="offer.php" class="stretched-link"></a>
                 </div>
             </div>
         </div>
