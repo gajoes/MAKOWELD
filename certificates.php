@@ -216,10 +216,6 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .blur{
-            filter: blur(4px);
-            transition: filter 0.3s ease;
-        }
         .hero-bg-video{
         position: absolute;
         top: 0;
@@ -455,37 +451,18 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function(){
-    const serviceImages=document.querySelectorAll('.service-image');
-    const serviceCards=document.querySelectorAll('.service-card');
-
-    serviceImages.forEach(image=>{
-      image.addEventListener('mouseenter',()=>{
-        gsap.to(image,{ scale: 1.05,duration: 1.3 });
+    const serviceImages = document.querySelectorAll('.service-image');
+    serviceImages.forEach(image =>{
+      image.addEventListener('mouseenter', ()=>{
+        gsap.to(image,{scale: 1.05,duration: 0.3});
       });
-      image.addEventListener('mouseleave',()=>{
-        gsap.to(image, { scale: 1,duration: 1.3 });
-      });
-    });
-
-    serviceCards.forEach(card=>{
-      card.addEventListener('mouseenter',()=>{
-        serviceCards.forEach(otherCard=>{
-          if(otherCard !==card){
-            otherCard.classList.add('blur');
-          }
-        });
-      });
-
-      card.addEventListener('mouseleave',()=>{
-        serviceCards.forEach(otherCard=>{
-          if(otherCard!==card){
-            otherCard.classList.remove('blur');
-          }
-        });
+      image.addEventListener('mouseleave', ()=>{
+        gsap.to(image,{scale: 1,duration: 0.3});
       });
     });
   });
 </script>
+
 <script>
 const switchLang=lang =>{
   document.querySelectorAll('[data-pl]').forEach(el =>{
